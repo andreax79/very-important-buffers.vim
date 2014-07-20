@@ -1,0 +1,177 @@
+*vib.txt*				Very Important Buffers						 *vib.txt*
+
+																		 *VIB*
+==============================================================================
+CONTENTS														*VIB-contents*
+
+	1. Install................................|VIBInstall|
+	2. Mappings...............................|VIBMappings|
+	   2.1 Global Mappings					  |VIBMappings-Global|
+	   2.2 Window Mappings					  |VIBMappings-Window|
+	3. Commands...............................|VIBCommands|
+	4. Options................................|VIBOptions|
+	   4.1 Splits.............................|VIBSplits|
+	   4.2 Automatic Opening..................|VIBAutoOpen|
+	5. About..................................|VIBAbout|
+
+==============================================================================
+1. Install														  *VIBInstall*
+
+------------------------------------------------------------------------------
+1.1 Vundle
+
+Add this line to your ~/.vimrc configuration file:
+Bundle 'andreax79/very-important-buffers.vim'
+
+------------------------------------------------------------------------------
+1.2 Pathogen
+
+Execute the following commands:
+cd ~/.vim/bundle
+git clone git@github.com:andreax79/very-important-buffers.vim
+
+==============================================================================
+2. Key Mappings													 *VIBMappings*
+
+------------------------------------------------------------------------------
+2.1 Global Mappings										  *VIBMappings-Global*
+
+VIB does not provide default key bindings for adding/removing buffers from VIB
+and controling the VIB Explorer
+
+You may want to add something like the following to your .vimrc file:
+
+  map <Leader>b :VIBToggle<cr>
+
+Either way, the key bindings used in these mappings should fit with your
+configuration of Vim.
+
+------------------------------------------------------------------------------
+2.2 Window Mappings										  *VIBMappings-Window*
+
+	o														   *VIB-Mapping-o*
+	e														   *VIB-Mapping-e*
+	<CR>													*VIB-Mapping-<CR>*
+								   Open selected buffer in the previous window
+
+	s														   *VIB-Mapping-s*
+			 Open selected buffer in a horizontal split of the previous window
+
+	v														   *VIB-Mapping-v*
+			   Open selected buffer in a vertical split of the previous window
+
+	d														   *VIB-Mapping-d*
+														Remove buffer from VIB
+
+	k														   *VIB-Mapping-k*
+	<up>													*VIB-Mapping-<up>*
+											Move one line up in the VIB window
+
+	j														   *VIB-Mapping-j*
+	<down>												  *VIB-Mapping-<down>*
+										  Move one line down in the VIB window
+
+	l														   *VIB-Mapping-l*
+	<right>												 *VIB-Mapping-<right>*
+									 Move one buffer forward in the VIB window
+
+	h														   *VIB-Mapping-h*
+	<left>												  *VIB-Mapping-<left>*
+									Move one buffer backward in the VIB window
+
+==============================================================================
+3. Commands														 *VIBCommands*
+
+:VIBFocus														   *:VIBFocus*
+	Focus into the VIB window.
+
+:VIBOpen															*:VIBOpen*
+	Open the VIB explorer.
+
+:VIBClose														   *:VIBClose*
+	Close the VIB Explorer if it's open.
+
+:VIBToggleExplorer										  *:VIBToggleExplorer*
+	Toggle the Explorer open and closed.
+
+:VIBAdd																 *:VIBAdd*
+	Add the current buffer to the current tab very important buffers.
+
+:VIBRemove														  *:VIBRemove*
+	Remove the current buffer from the current tab very important buffers.
+
+:VIBToggle														  *:VIBToggle*
+	Toggle the current buffer from the current tab very important buffers.
+
+:VIBAddAll														  *:VIBAddAll*
+	Add all the open buffers to the current tab very important buffers.
+
+:VIBRemoveAll												   *:VIBRemoveAll*
+	Clean the current tab very important buffers.
+
+:VIBls																  *:VIBls*
+	Show very important buffers.
+
+:VIBn																   *:VIBn*
+	Switch to next very important buffer.
+
+:VIBp																   *:VIBp*
+	Switch to previous very important buffer.
+
+==============================================================================
+4. Options														  *VIBOptions*
+
+------------------------------------------------------------------------------
+4.1 Splits														   *VIBSplits*
+
+														  *'g:vibExplBRSplit'*
+To control where the new split window goes relative to the current window, use
+the setting:
+
+  let g:vibExplBRSplit = 0	 " Put new window above current
+  let g:vibExplBRSplit = 1	 " Put new window below current
+
+
+													  *'g:vibExplSplitToEdge'*
+By default we are now (as of 6.0.2) forcing the VIM Explorer window to open up
+at the edge of the screen. You can turn this off by setting the following
+variable in your .vimrc:
+
+  let g:vibExplSplitToEdge = 0
+
+------------------------------------------------------------------------------
+4.2 Automatic Opening											 *VIBAutoOpen*
+
+														*'g:vibExplAutoStart'*
+If you only want open VIB Explorer manually when needed, you can put the
+following into your .vimrc:
+
+  let g:vibExplorerAutoStart = 0
+
+==============================================================================
+5. About															*VIBAbout*
+
+	Very Important Buffers
+			   Copyright (C) 2014 Andrea Bonomi
+
+	Based on Mini Buffer Explorer 
+	Copyright: Copyright (C) 2002 & 2003 Bindu Wavell
+			   Copyright (C) 2010 Oliver Uvman
+			   Copyright (C) 2010 Danielle Church
+			   Copyright (C) 2010 Stephan Sokolow
+			   Copyright (C) 2010 & 2011 Federico Holgado
+			   Copyright (C) 2012 & 2013 Techlive Zheng
+
+			   Permission is hereby granted to use and distribute this code,
+			   with or without modifications, provided that this copyright
+			   notice is copied with it. Like anything else that's free,
+			   vib.vim is provided *as is* and comes with no
+			   warranty of any kind, either expressed or implied. In no
+			   event will the copyright holder be liable for any damages
+			   resulting from the use of this software.
+
+  Description: Very Important Buffers
+   GitHub URL: https://github.com/andreax79/very-important-buffers.vim
+
+==============================================================================
+vim: ft=help tw=78 cc=79 et ts=8 sw=4 sts=4
