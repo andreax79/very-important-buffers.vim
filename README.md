@@ -59,3 +59,16 @@ VIB Explorer lists VIB as tabs along the top of Vim. It is derived from the Mini
 
 * `:VIBToggleExplorer`
  * Toggle the Explorer open and closed.
+
+## Unite integration
+
+This plugins providers a [unite.vim](https://github.com/Shougo/unite.vim)'s source provider.
+To show the current tab VIB, execute |:Unite| command with
+"vib" as a source parameter.
+
+    :Unite vib
+
+![img](http://s18.postimg.org/6sozevdk9/vib2.png)
+
+
+
