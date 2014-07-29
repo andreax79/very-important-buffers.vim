@@ -288,7 +288,7 @@ augroup VIBExpl
     autocmd TabEnter      * nested call <SID>TabEnterHandler()
     autocmd BufDelete     *        call <SID>BufDeleteHandler()
     if exists('##QuitPre')
-        autocmd QuitPre   * if <SID>NextNormalWindow() == -1 | call <SID>StopExplorer(0) | endif
+        autocmd QuitPre   * if <SID>NextNormalWindow() == -1 | call <SID>StopExplorer() | endif
     endif
 augroup END
 
@@ -317,7 +317,7 @@ function! <SID>BufDeleteHandler()
             setlocal modifiable
             resize
             exec 'noautocmd sb'.t:VIBList[0]
-            call <SID>StopExplorer(0)
+            call <SID>StopExplorer()
             call <SID>StartExplorer()
         else
             close
